@@ -13,10 +13,10 @@ public class FileReader {
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new java.io.FileReader(file))) {
             String line = reader.readLine();
-            do {
+            while (line != null) {
                 lines.add(line.substring(line.indexOf(" ") + 1));
                 line = reader.readLine();
-            } while (line != null);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
