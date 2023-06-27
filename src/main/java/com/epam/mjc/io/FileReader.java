@@ -18,7 +18,7 @@ public class FileReader {
                 line = reader.readLine();
             }
         } catch (IOException e) {
-            e.printStackTrace(System.err);
+            e.printStackTrace();
         }
         return new Profile(lines.get(0), Integer.parseInt(lines.get(1)), lines.get(2), Long.parseLong(lines.get(3)));
     }
